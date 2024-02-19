@@ -1,0 +1,11 @@
+{
+    "identifier": {
+        "offer": "0001-com-ubuntu-pro-jammy",
+        "publisher": "canonical",
+        "sku": "pro-22_04-lts-gen2"
+    },
+    "osState": "Generalized",
+    "osType": "Linux",
+    "architecture": "x64",
+    "hyperVGeneration": "V2"
+}

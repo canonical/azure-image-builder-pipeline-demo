@@ -1,0 +1,31 @@
+[
+    {
+        "type": "Shell",
+        "name": "WaitForUAtokenAutoAttach",
+        "inline": [
+            "sudo ua status --wait"
+        ]
+    },
+    {
+        "type": "Shell",
+        "name": "Placeholder for custom commands required in each Ubuntu VM",
+        "inline": [
+            "echo 'Replace me!'"
+        ]
+    },
+    {
+        "type": "Shell",
+        "name": "DetachUA -- images created from this will auto attach themselves with new credentials",
+        "inline": [
+            "sudo ua detach --assume-yes && sudo rm -rf /var/log/ubuntu-advantage.log"
+        ]
+    },
+
+    {
+        "type": "Shell",
+        "name": "Replace /etc/machine-id with empty file to ensure UA client does not see clones as duplicates",
+        "inline": [
+            "sudo rm -f /etc/machine-id && sudo touch /etc/machine-id"
+        ]
+    }
+]
