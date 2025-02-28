@@ -1,0 +1,17 @@
+linters:
+  disable-all: true
+  enable:
+    - errcheck
+    - gochecksumtype
+    - goconst
+    - gofmt
+    - goimports
+    - gosimple
+    - govet
+    - ineffassign
+    - misspell
+    - revive
+    - staticcheck
+    - stylecheck
+    - unconvert
+    - unused
