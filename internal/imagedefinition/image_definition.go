@@ -40,9 +40,8 @@ func EnsureImageDefinition(subscriptionID string, cred azcore.TokenCredential, r
 			if e.StatusCode == 404 {
 				log.Println("Creating image definition:", imageName)
 				return createImageDefinition(*client, resourceGroup, galleryName, imageName, imageProperties, location)
-			} else {
-				return "", fmt.Errorf("error while retrieving image gallery: %w", e)
 			}
+			return "", fmt.Errorf("error while retrieving image gallery: %w", e)
 		default:
 			return "", fmt.Errorf("error while retrieving image gallery: %w", e)
 		}

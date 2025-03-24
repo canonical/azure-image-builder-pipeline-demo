@@ -47,9 +47,8 @@ func EnsureImageBuilderTemplate(subscriptionID string, cred azcore.TokenCredenti
 			if e.StatusCode == 404 {
 				log.Print("Creating image template: ", imageTemplateName)
 				return createImageBuilderTemplate(*client, resourceGroup, imageTemplateName, imageTemplate)
-			} else {
-				return fmt.Errorf("error while retrieving image template: %w", e)
 			}
+			return fmt.Errorf("error while retrieving image template: %w", e)
 		default:
 			return fmt.Errorf("error while retrieving image template: %w", e)
 		}

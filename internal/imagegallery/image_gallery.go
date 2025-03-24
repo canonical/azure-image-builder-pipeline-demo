@@ -24,9 +24,8 @@ func EnsureImageGallery(subscriptionID string, cred azcore.TokenCredential, reso
 			if e.StatusCode == 404 {
 				log.Print("Creating image gallery: ", galleryName)
 				return createImageGallery(*client, resourceGroup, galleryName, location)
-			} else {
-				return fmt.Errorf("error while retrieving image gallery: %w", e)
 			}
+			return fmt.Errorf("error while retrieving image gallery: %w", e)
 		default:
 			return fmt.Errorf("error while retrieving image gallery: %w", e)
 		}
