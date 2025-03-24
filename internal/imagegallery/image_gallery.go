@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
-	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v5"
+	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v6"
 )
 
 func EnsureImageGallery(subscriptionID string, cred azcore.TokenCredential, resourceGroup string, galleryName string, location string) error {
@@ -24,9 +24,8 @@ func EnsureImageGallery(subscriptionID string, cred azcore.TokenCredential, reso
 			if e.StatusCode == 404 {
 				log.Print("Creating image gallery: ", galleryName)
 				return createImageGallery(*client, resourceGroup, galleryName, location)
-			} else {
-				return fmt.Errorf("error while retrieving image gallery: %w", e)
 			}
+			return fmt.Errorf("error while retrieving image gallery: %w", e)
 		default:
 			return fmt.Errorf("error while retrieving image gallery: %w", e)
 		}

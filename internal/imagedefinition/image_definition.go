@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
-	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v5"
+	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v6"
 )
 
 func BuildImagePropertiesFromFile(path string) (armcompute.GalleryImageProperties, error) {
@@ -40,9 +40,8 @@ func EnsureImageDefinition(subscriptionID string, cred azcore.TokenCredential, r
 			if e.StatusCode == 404 {
 				log.Println("Creating image definition:", imageName)
 				return createImageDefinition(*client, resourceGroup, galleryName, imageName, imageProperties, location)
-			} else {
-				return "", fmt.Errorf("error while retrieving image gallery: %w", e)
 			}
+			return "", fmt.Errorf("error while retrieving image gallery: %w", e)
 		default:
 			return "", fmt.Errorf("error while retrieving image gallery: %w", e)
 		}
