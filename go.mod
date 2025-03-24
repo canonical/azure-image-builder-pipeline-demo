@@ -2,7 +2,7 @@ module aib-pipeline-demo
 
 go 1.23.0
 
-toolchain go1.23.7
+toolchain go1.24.1
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.17.1
