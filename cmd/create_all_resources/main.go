@@ -1,12 +1,12 @@
 package main
 
 import (
-	"aib-pipeline-demo/pkg/imagebuilder"
-	"aib-pipeline-demo/pkg/imagedefinition"
-	"aib-pipeline-demo/pkg/imagegallery"
-	"aib-pipeline-demo/pkg/managedidentity"
-	"aib-pipeline-demo/pkg/resourcegroup"
-	"aib-pipeline-demo/pkg/role"
+	"aib-pipeline-demo/internal/imagebuilder"
+	"aib-pipeline-demo/internal/imagedefinition"
+	"aib-pipeline-demo/internal/imagegallery"
+	"aib-pipeline-demo/internal/managedidentity"
+	"aib-pipeline-demo/internal/resourcegroup"
+	"aib-pipeline-demo/internal/role"
 	"fmt"
 	"log"
 	"os"

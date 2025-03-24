@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aib-pipeline-demo/pkg/imagebuilder"
+	"aib-pipeline-demo/internal/imagebuilder"
 	"fmt"
 	"log"
 	"os"
