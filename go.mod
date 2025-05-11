@@ -12,6 +12,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/virtualmachineimagebuilder/armvirtualmachineimagebuilder/v2 v2.3.0
 	github.com/google/uuid v1.6.0
 	github.com/urfave/cli/v2 v2.27.6
+	github.com/urfave/cli/v3 v3.3.3
 )
 
 require (
